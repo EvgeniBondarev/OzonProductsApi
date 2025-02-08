@@ -1,0 +1,11 @@
+2025-02-08 19:16:12.320 [Information ] Request: GET /scalar/v1
+2025-02-08 19:16:12.498 [Information ] Response: 200
+2025-02-08 19:16:12.536 [Information ] Request: GET /scalar/scalar.js
+2025-02-08 19:16:12.537 [Information ] Request: GET /scalar/scalar.aspnetcore.js
+2025-02-08 19:16:12.581 [Information ] Response: 200
+2025-02-08 19:16:12.625 [Information ] Response: 200
+2025-02-08 19:16:12.696 [Information ] Request: GET /openapi/v1.json
+2025-02-08 19:16:12.807 [Information ] Response: 200
+2025-02-08 19:16:13.104 [Information ] Request: GET /favicon.ico
+2025-02-08 19:16:13.116 [Information ] Response: 404
+2025-02-08 19:16:18.403 [Information ] Request: POST /api/Ozon/description-category-tree

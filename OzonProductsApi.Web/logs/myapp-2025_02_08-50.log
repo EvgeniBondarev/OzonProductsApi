@@ -1,0 +1,10 @@
+2025-02-08 21:45:53.388 [Information ] Request: GET /scalar/v1
+2025-02-08 21:45:53.468 [Information ] Response: 200
+2025-02-08 21:45:53.483 [Information ] Request: GET /scalar/scalar.js
+2025-02-08 21:45:53.483 [Information ] Request: GET /scalar/scalar.aspnetcore.js
+2025-02-08 21:45:53.488 [Information ] Response: 304
+2025-02-08 21:45:53.488 [Information ] Response: 304
+2025-02-08 21:45:53.590 [Information ] Request: GET /openapi/v1.json
+2025-02-08 21:45:53.684 [Information ] Response: 200
+2025-02-08 21:46:00.389 [Information ] Request: POST /api/Ozon/product/import/info
+2025-02-08 21:46:00.954 [Information ] Response: 500

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "5nrnQf/BlCL0CTKbmrQw6gD7NBF95cN0Vd9RCwAgrww=",
+  "Source": "OzonProductsApi.Web",
+  "BasePath": "_content/OzonProductsApi.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

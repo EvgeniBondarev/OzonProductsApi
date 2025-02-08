@@ -1,0 +1,12 @@
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\bin\Debug\net9.0\OzonProductsApi.Application.deps.json
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\bin\Debug\net9.0\OzonProductsApi.Application.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\bin\Debug\net9.0\OzonProductsApi.Application.pdb
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.csproj.AssemblyReference.cache
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.AssemblyInfoInputs.cache
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.AssemblyInfo.cs
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.csproj.CoreCompileInputs.cache
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\refint\OzonProductsApi.Application.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.pdb
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\ref\OzonProductsApi.Application.dll

@@ -1,0 +1,4 @@
+2025-02-08 21:59:19.703 [Information ] Start processing HTTP request POST https://api-seller.ozon.ru/v1/product/import/info
+2025-02-08 21:59:19.708 [Information ] Sending HTTP request POST https://api-seller.ozon.ru/v1/product/import/info
+2025-02-08 21:59:20.017 [Information ] Received HTTP response headers after 294.1403ms - 200
+2025-02-08 21:59:20.022 [Information ] End processing HTTP request after 327.1968ms - 200

@@ -1,0 +1,6 @@
+2025-02-08 20:12:24.178 [Information ] Now listening on: http://localhost:5290
+2025-02-08 20:12:24.184 [Information ] Application started. Press Ctrl+C to shut down.
+2025-02-08 20:12:24.185 [Information ] Hosting environment: Development
+2025-02-08 20:12:24.185 [Information ] Content root path: D:\.NETProject\OzonProductsApi\OzonProductsApi.Web
+2025-02-08 20:12:24.629 [Warning     ] Failed to determine the https port for redirect.
+2025-02-08 20:13:42.048 [Information ] Application is shutting down...
