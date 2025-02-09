@@ -5,10 +5,10 @@ namespace OzonProductsApi.Application.OzonApiClient.Models.Response;
 public class CategoryNode
 {
     [JsonProperty("description_category_id")]
-    public long Id { get; set; }
+    public long? Id { get; set; }
 
     [JsonProperty("category_name")]
-    public string Name { get; set; } = string.Empty;
+    public string? Name { get; set; } = string.Empty;
 
     [JsonProperty("disabled")]
     public bool Disabled { get; set; }
