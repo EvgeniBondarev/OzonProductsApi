@@ -42,7 +42,7 @@ public class OzonController : ControllerBase
         try
         {
             // Отправляем запрос и получаем типизированный ответ
-            DescriptionCategoryResponse response = await _ozonApiClient.SendRequestAsync<DescriptionCategoryPayload, DescriptionCategoryResponse>(
+            CategoryTreeResponse response = await _ozonApiClient.SendRequestAsync<DescriptionCategoryPayload, CategoryTreeResponse>(
                 HttpMethod.Post,
                 url,
                 headers,

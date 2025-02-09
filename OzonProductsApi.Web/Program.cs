@@ -15,7 +15,7 @@ builder.Logging
     .AddConsole()
     .AddDebug()
     .AddConfiguration(builder.Configuration.GetSection("Logging"))
-    .AddFile(builder.Configuration.GetSection("Logging:File")); ;
+    .AddFile(builder.Configuration.GetSection("Logging:File"));
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -58,7 +58,8 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen(opt => 
+// Настройка Swagger
+builder.Services.AddSwaggerGen(opt =>
 {
     opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -69,7 +70,7 @@ builder.Services.AddSwaggerGen(opt =>
         Type = SecuritySchemeType.Http,
         Scheme = "Bearer"
     });
-    
+
     opt.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -98,28 +99,37 @@ app.Use(async (context, next) =>
 {
     var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
     logger.LogInformation("Request: {Method} {Path}", context.Request.Method, context.Request.Path);
-    
+
     await next();
-    
+
     logger.LogInformation("Response: {StatusCode}", context.Response.StatusCode);
 });
 
+// Swagger JSON доступен по адресу /openapi/{documentName}.json
 app.UseSwagger(opt =>
 {
     opt.RouteTemplate = "openapi/{documentName}.json";
 });
-app.MapScalarApiReference(opt =>
+
+// Swagger UI доступен по адресу /swagger
+app.UseSwaggerUI(opt =>
+{
+    opt.RoutePrefix = "swagger";
+    opt.SwaggerEndpoint("/openapi/v1.json", "API V1");
+});
+
+// Scalar API Reference доступен по адресу /scalar
+app.MapScalarApiReference("/scalar", opt =>
 {
     opt.Title = "Scalar Example";
     opt.Theme = ScalarTheme.Mars;
     opt.DefaultHttpClient = new(ScalarTarget.Http, ScalarClient.Http11);
 });
 
-
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseSession();
-app.UseAuthentication(); 
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

@@ -10,3 +10,4 @@ D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\Ozon
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\refint\OzonProductsApi.Application.dll
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.pdb
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\ref\OzonProductsApi.Application.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.sourcelink.json

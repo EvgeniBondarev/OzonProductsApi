@@ -8,11 +8,11 @@ public static class Converter
     {
         Converters =
         {
-            new CategoryNodeConverter(),
             new CategoryAttributeConverter(),
             new AttributeValueConverter(),
             new ProductImportRequestConverter(),
-            new ProductImportInfoResponseConverter() 
+            new ProductImportInfoResponseConverter(),
+            new CategoryTreeConverter()
         },
         NullValueHandling = NullValueHandling.Ignore,
         ReferenceLoopHandling = ReferenceLoopHandling.Ignore

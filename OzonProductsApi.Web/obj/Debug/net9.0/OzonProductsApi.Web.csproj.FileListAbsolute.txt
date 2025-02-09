@@ -73,3 +73,4 @@ D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\refint\OzonP
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\OzonProductsApi.Web.pdb
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\OzonProductsApi.Web.genruntimeconfig.cache
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\ref\OzonProductsApi.Web.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\OzonProductsApi.Web.sourcelink.json
