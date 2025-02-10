@@ -74,3 +74,4 @@ D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\OzonProducts
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\OzonProductsApi.Web.genruntimeconfig.cache
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\ref\OzonProductsApi.Web.dll
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\OzonProductsApi.Web.sourcelink.json
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\bin\Debug\net9.0\Swashbuckle.AspNetCore.Annotations.dll

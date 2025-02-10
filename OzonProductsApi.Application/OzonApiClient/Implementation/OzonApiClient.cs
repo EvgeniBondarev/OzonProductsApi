@@ -47,8 +47,6 @@ public class OzonApiClient : IOzonApiClient
                 request.Content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
             }
             
-
-            // Отправляем запрос с повторными попытками
             HttpResponseMessage response = await _retryPolicy.ExecuteAsync(() => client.SendAsync(request));
             response.EnsureSuccessStatusCode();
 

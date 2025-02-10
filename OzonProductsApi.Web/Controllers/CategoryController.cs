@@ -1,38 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using OzonProductsApi.Application.CategoryTreeService;
 using OzonProductsApi.Application.OzonApiClient.Models.Response;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace OzonProductsApi.Controllers;
 
 [Route("api/[controller]")]
-[ApiController]
-public class CategoryController : ControllerBase
+public class CategoryController : BaseApiController
 {
-    private static readonly CategoryTreeManager _categoryTree;
+    private static readonly CategoryTreeManager CategoryTree;
 
     static CategoryController()
     {
-        List<CategoryNode> categories = CategoryTreeReader.ReadCategories("D:\\OzonCard\\ozon_category_tree.json");
-        _categoryTree = new CategoryTreeManager(categories);
+        List<CategoryNode> categories = CategoryTreeReader.ReadCategories();
+        CategoryTree = new CategoryTreeManager(categories);
     }
+    public CategoryController(ILogger<CategoryController> logger) : base(logger) { }
 
     [HttpGet("find-by-type-id/{typeId}")]
+    [SwaggerOperation(Summary = "Найти категорию по типу ID", 
+        Description = "Метод для поиска категории по ID типа. Возвращает категорию или сообщение о том, что тип не найден.")]
     public IActionResult FindByTypeId(long typeId)
     {
-        var result = _categoryTree.FindByTypeId(typeId);
-        if (result == null)
-            return NotFound("Тип не найден");
-
-        return Ok(result);
+        var result = CategoryTree.FindByTypeId(typeId);
+        return result != null ? ApiOk(result) : ApiNotFound("Тип не найден");
     }
 
     [HttpGet("find-by-type-name/{typeName}")]
+    [SwaggerOperation(Summary = "Найти категорию по имени типа", 
+        Description = "Метод для поиска категории по имени типа. Возвращает категорию или сообщение о том, что тип не найден.")]
     public IActionResult FindByTypeName(string typeName)
     {
-        var result = _categoryTree.FindByTypeName(typeName);
-        if (result == null)
-            return NotFound("Тип не найден");
-
-        return Ok(result);
+        var result = CategoryTree.FindByTypeName(typeName);
+        return result != null ? ApiOk(result) : ApiNotFound("Тип не найден");
     }
 }

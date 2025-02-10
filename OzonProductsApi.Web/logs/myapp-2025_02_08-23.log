@@ -1,4 +1,0 @@
-2025-02-08 19:37:18.327 [Information ] Start processing HTTP request POST https://api-seller.ozon.ru/v1/description-category/tree
-2025-02-08 19:37:18.334 [Information ] Sending HTTP request POST https://api-seller.ozon.ru/v1/description-category/tree
-2025-02-08 19:37:18.893 [Information ] Received HTTP response headers after 544.8342ms - 200
-2025-02-08 19:37:18.899 [Information ] End processing HTTP request after 580.0564ms - 200

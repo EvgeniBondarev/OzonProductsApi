@@ -1,41 +1,34 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using Microsoft.AspNetCore.Http;
+using OzonProductsApi.ApiModels;
+using SlqStudio.Application.Services.Implementation;
+using SlqStudio.Application.Services.Models;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace OzonProductsApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthController(IConfiguration configuration) : ControllerBase
+public class AuthController : ControllerBase
 {
+    private readonly JwtTokenService _jwtTokenService;
+
+    public AuthController(JwtTokenService jwtTokenService)
+    {
+        _jwtTokenService = jwtTokenService;
+    }
+
     [HttpPost("login")]
+    [SwaggerOperation(Summary = "Логин пользователя", 
+        Description = "Метод для аутентификации пользователя. При успешной аутентификации генерируется JWT-токен и сохраняется в cookies.")]
     public IActionResult Login([FromBody] LoginRequest request)
     {
         if (request.Username != "admin" || request.Password != "admin")
             return Unauthorized();
 
-        var claims = new[]
-        {
-            new Claim(ClaimTypes.Name, request.Username),
-            new Claim(ClaimTypes.Role, "Admin")
-        };
-
-        var key = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"] ?? string.Empty));
+        var token = _jwtTokenService.GenerateJwtToken(request.Username);
         
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-        var token = new JwtSecurityToken(
-            issuer: configuration["Jwt:Issuer"],
-            audience: configuration["Jwt:Audience"],
-            claims: claims,
-            expires: DateTime.Now.AddMinutes(30),
-            signingCredentials: creds);
-        
-        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
-        Response.Cookies.Append("jwt", tokenString, new CookieOptions
+        Response.Cookies.Append("jwt", token, new CookieOptions
         {
             HttpOnly = true,
             Secure = true,
@@ -43,22 +36,15 @@ public class AuthController(IConfiguration configuration) : ControllerBase
             Expires = DateTime.UtcNow.AddMinutes(30)
         });
         
-        return Ok(new
-        {
-            token = new JwtSecurityTokenHandler().WriteToken(token)
-        });
+        return Ok(new { token });
     }
-    
+
     [HttpPost("logout")]
+    [SwaggerOperation(Summary = "Логаут пользователя", 
+        Description = "Метод для выхода пользователя. Удаляет JWT-токен из cookies.")]
     public IActionResult Logout()
     {
         Response.Cookies.Delete("jwt");
         return Ok();
-    }
-
-    public class LoginRequest
-    {
-        public required string Username { get; set; }
-        public required string Password { get; set; }
     }
 }

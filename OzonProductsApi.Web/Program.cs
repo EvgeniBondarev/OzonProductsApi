@@ -5,8 +5,12 @@ using Scalar.AspNetCore;
 using System.Text;
 using OzonProductsApi.Application.OzonApiClient.Implementation;
 using OzonProductsApi.Application.OzonApiClient.Interfaces;
+using OzonProductsApi.Application.OzonApiService;
+using OzonProductsApi.Application.OzonApiService.Models;
 using OzonProductsApi.Logger;
 using Polly;
+using SlqStudio.Application.Services.Implementation;
+using SlqStudio.Application.Services.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,7 +62,6 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-// Настройка Swagger
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -91,7 +94,25 @@ builder.Services.AddHttpClient("RetryClient")
     .AddTransientHttpErrorPolicy(policy =>
         policy.WaitAndRetryAsync(3, _ => TimeSpan.FromSeconds(2)));
 
-builder.Services.AddSingleton<IOzonApiClient, OzonApiClient>();
+builder.Services.AddScoped<IOzonApiClient, OzonApiClient>();
+
+var ozonApiSettings = builder.Configuration.GetSection("OzonApi");
+builder.Services.Configure<OzonApiSettings>(ozonApiSettings);
+builder.Services.AddScoped<IOzonApiService, OzonApiService>();
+
+var jwtSettings = new JwtSettings
+{
+    Key = builder.Configuration["Jwt:SecretKey"],
+    Issuer = builder.Configuration["Jwt:Issuer"],
+    Audience = builder.Configuration["Jwt:Audience"],
+    ExpirationMinutes = 30
+};
+builder.Services.AddScoped<JwtTokenService>();
+builder.Services.AddScoped<JwtTokenHandler>();
+
+builder.Services.AddSingleton(jwtSettings);
+
+builder.Services.AddScoped<OzonApiService>();
 
 var app = builder.Build();
 
@@ -105,20 +126,17 @@ app.Use(async (context, next) =>
     logger.LogInformation("Response: {StatusCode}", context.Response.StatusCode);
 });
 
-// Swagger JSON доступен по адресу /openapi/{documentName}.json
 app.UseSwagger(opt =>
 {
     opt.RouteTemplate = "openapi/{documentName}.json";
 });
 
-// Swagger UI доступен по адресу /swagger
 app.UseSwaggerUI(opt =>
 {
     opt.RoutePrefix = "swagger";
     opt.SwaggerEndpoint("/openapi/v1.json", "API V1");
 });
 
-// Scalar API Reference доступен по адресу /scalar
 app.MapScalarApiReference("/scalar", opt =>
 {
     opt.Title = "Scalar Example";
