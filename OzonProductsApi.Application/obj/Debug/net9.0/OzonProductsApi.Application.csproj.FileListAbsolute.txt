@@ -11,3 +11,8 @@ D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\refi
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.pdb
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\ref\OzonProductsApi.Application.dll
 D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.sourcelink.json
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\bin\Debug\net9.0\OzonProductsApi.Persistence.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\bin\Debug\net9.0\OzonProductsApi.Persistence.pdb
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProd.A6391991.Up2Date
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\bin\Debug\net9.0\OzonProductsApi.Application.runtimeconfig.json
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Application\obj\Debug\net9.0\OzonProductsApi.Application.genruntimeconfig.cache

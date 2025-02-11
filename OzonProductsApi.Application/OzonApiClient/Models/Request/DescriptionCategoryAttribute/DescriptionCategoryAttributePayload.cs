@@ -8,7 +8,7 @@ public class DescriptionCategoryAttributePayload
     public long DescriptionCategoryId { get; set; }
         
     [JsonProperty("language")]
-    public string Language { get; set; }
+    public string Language { get; set; } = "DEFAULT";
         
     [JsonProperty("type_id")]
     public long TypeId { get; set; }

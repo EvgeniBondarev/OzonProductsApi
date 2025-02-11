@@ -3,7 +3,7 @@ using System.Security.Claims;
 
 namespace SlqStudio.Application.Services.Implementation;
 
-public class JwtTokenHandler
+public class JwtTokenHandler : IJwtTokenHandler
 {
     public string GetEmailFromToken(string token)
     {

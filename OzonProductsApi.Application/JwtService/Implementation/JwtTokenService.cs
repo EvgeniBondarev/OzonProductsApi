@@ -8,7 +8,7 @@ using SlqStudio.Application.Services.Models;
 
 namespace SlqStudio.Application.Services.Implementation;
 
-public class JwtTokenService
+public class JwtTokenService : IJwtTokenService
 {
     private readonly JwtSettings _jwtSettings;
 

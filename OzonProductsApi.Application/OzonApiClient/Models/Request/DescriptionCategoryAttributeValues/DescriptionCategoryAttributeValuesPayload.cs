@@ -11,13 +11,13 @@ public class DescriptionCategoryAttributeValuesPayload
     public long DescriptionCategoryId { get; set; }
         
     [JsonProperty("language")]
-    public string Language { get; set; }
+    public string Language { get; set; } = "DEFAULT";
         
     [JsonProperty("last_value_id")]
     public long LastValueId { get; set; }
-        
-    [JsonProperty("limit")]
-    public int Limit { get; set; }
+
+    [JsonProperty("limit")] 
+    public int Limit { get; set; } = 100;
         
     [JsonProperty("type_id")]
     public long TypeId { get; set; }

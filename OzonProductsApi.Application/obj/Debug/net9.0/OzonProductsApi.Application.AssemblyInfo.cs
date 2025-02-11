@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OzonProductsApi.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c21a03095e14f3fcd4dfd3a9d9d4ecd6237b929")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37c702cd4a4a4bd3c4f1f49b7928f852332844a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("OzonProductsApi.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OzonProductsApi.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
