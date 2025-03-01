@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using OzonProductsApi.Application.OzonApiClient.Models.Request;
 using OzonProductsApi.Application.OzonApiService;
 using Swashbuckle.AspNetCore.Annotations;
@@ -47,7 +48,23 @@ public class OzonApiController : BaseApiController
                       Description = "Метод для импорта продукта в систему. Возвращает результат в виде Id импорта.")]
     public async Task<IActionResult> ImportProduct([FromBody] ProductImportRequest payload)
     {
+        
         var result = await _ozonApiService.ImportProductAsync(payload);
+        return result != null ? ApiOk(result) : ApiBadRequest("Ошибка импорта продукта");
+    }
+    
+    [HttpPost("product-string-import")]
+    [SwaggerOperation(Summary = "Импорт продукта", 
+        Description = "Метод для импорта продукта в систему. Возвращает результат в виде Id импорта.")]
+    public async Task<IActionResult> ImportProductFromSting([FromBody] ProductImportRequest payload)
+    {
+        string jsonPayload = JsonConvert.SerializeObject(payload);
+        if (payload == null)
+        {
+            return ApiBadRequest("Неверный формат запроса");
+        }
+
+        var result = await _ozonApiService.ImportProductAsync(jsonPayload);
         return result != null ? ApiOk(result) : ApiBadRequest("Ошибка импорта продукта");
     }
     

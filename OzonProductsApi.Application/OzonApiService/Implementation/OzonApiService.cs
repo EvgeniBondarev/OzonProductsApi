@@ -44,6 +44,12 @@ public class OzonApiService : IOzonApiService
             HttpMethod.Post, OzonApiEndpoints.ProductImport, payload);
     }
     
+    public async Task<ImportResponse> ImportProductAsync(string payload)
+    {
+        return await SendRequestAsync<ImportResponse>(
+            HttpMethod.Post, OzonApiEndpoints.ProductImport, payload);
+    }
+
     public async Task<ProductImportInfoResponse> GetProductImportInfoAsync(ProductImportInfoPayload payload)
     {
         return await SendRequestAsync<ProductImportInfoPayload, ProductImportInfoResponse>(
@@ -56,6 +62,19 @@ public class OzonApiService : IOzonApiService
         {
             string url = $"{OzonApiEndpoints.BaseUrl}{endpoint}";
             return await _ozonApiClient.SendRequestAsync<TRequest, TResponse>(method, url, _headers, payload);
+        }
+        catch (Exception ex)
+        {
+            throw new ApplicationException($"Ошибка при вызове {endpoint}: {ex.Message}", ex);
+        }
+    }
+    
+    private async Task<TResponse> SendRequestAsync<TResponse>(HttpMethod method, string endpoint, string payload)
+    {
+        try
+        {
+            string url = $"{OzonApiEndpoints.BaseUrl}{endpoint}";
+            return await _ozonApiClient.SendRequestAsync<TResponse>(method, url, _headers, payload);
         }
         catch (Exception ex)
         {

@@ -7,7 +7,7 @@ public class CategoryTreeReader
 {
     public static List<CategoryNode> ReadCategories()
     {
-        string rootPath = Directory.GetParent(AppContext.BaseDirectory)?.Parent?.Parent?.FullName ?? Directory.GetCurrentDirectory();
+        string rootPath = "D:\\OzonProductsApi-master\\OzonProductsApi.Web\\bin";
         string json = File.ReadAllText(Path.Combine(rootPath, "Data", "ozonCategoryTree.json"));
         var root = JsonConvert.DeserializeObject<Dictionary<string, List<CategoryNode>>>(json);
         return root?["result"] ?? new List<CategoryNode>();

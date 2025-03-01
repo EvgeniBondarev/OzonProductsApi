@@ -12,6 +12,14 @@ builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddSwaggerDocumentation();
 builder.Services.AddResilientHttpClient();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy => policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
 builder.Services.AddApplicationServices(builder.Configuration);
 
 builder.Services.AddMongoServices(builder.Configuration);
@@ -30,4 +38,5 @@ builder.Services.AddControllers()
 var app = builder.Build();
 
 app.ConfigureMiddleware();
+app.UseCors("AllowAll");
 app.Run();

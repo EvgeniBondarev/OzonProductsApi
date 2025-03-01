@@ -9,5 +9,6 @@ public interface IOzonApiService
     Task<DescriptionCategoryAttributeResponse> GetDescriptionCategoryAttributeAsync(DescriptionCategoryAttributePayload payload);
     Task<DescriptionCategoryAttributeValuesResponse> GetDescriptionCategoryAttributeValuesAsync(DescriptionCategoryAttributeValuesPayload payload);
     Task<ImportResponse> ImportProductAsync(ProductImportRequest payload);
+    Task<ImportResponse> ImportProductAsync(string payload);
     Task<ProductImportInfoResponse> GetProductImportInfoAsync(ProductImportInfoPayload payload);
 }

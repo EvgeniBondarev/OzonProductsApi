@@ -19,6 +19,21 @@ public class OzonTasksController : BaseApiController
     {
         _mediator = mediator;
     }
+    
+    [HttpGet]
+    [SwaggerOperation(Summary = "Получить все задачи")]
+    public async Task<IActionResult> Get()
+    {
+        try
+        {
+            var result = await _mediator.Send(new GetAllTasksQuery());
+            return ApiOk(result, "Список задач");
+        }
+        catch (Exception ex)
+        {
+            return ApiBadRequest("Ошибка создания задачи", ex);
+        }
+    }
 
     [HttpPost]
     [SwaggerOperation(Summary = "Создать новую задачу")]
