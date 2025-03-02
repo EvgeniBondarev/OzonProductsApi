@@ -9,12 +9,27 @@ namespace OzonProductsApi.Controllers;
 [Route("api/[controller]")]
 public class CategoryController : BaseApiController
 {
-    private static readonly CategoryTreeManager CategoryTree;
+    private static readonly Task<CategoryTreeManager> _initializationTask;
+    private static CategoryTreeManager _categoryTree;
 
+    public static CategoryTreeManager CategoryTree
+    {
+        get
+        {
+            _initializationTask.Wait();
+            return _categoryTree;
+        }
+    }
     static CategoryController()
     {
-        List<CategoryNode> categories = CategoryTreeReader.ReadCategories();
-        CategoryTree = new CategoryTreeManager(categories);
+        _initializationTask = InitializeAsync();
+    }
+    
+    private static async Task<CategoryTreeManager> InitializeAsync()
+    {
+        List<CategoryNode> categories = await CategoryTreeReader.ReadCategoriesAsync();
+        _categoryTree = new CategoryTreeManager(categories);
+        return _categoryTree;
     }
     public CategoryController(ILogger<CategoryController> logger) : base(logger) { }
 
