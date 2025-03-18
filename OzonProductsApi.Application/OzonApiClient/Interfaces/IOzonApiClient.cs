@@ -17,4 +17,10 @@ public interface IOzonApiClient
         string endpoint,
         Dictionary<string, string>? headers,
         TRequest payload);
+    
+    Task<TResponse> SendRequestAsync<TResponse>(
+        HttpMethod method,
+        string endpoint,
+        Dictionary<string, string>? headers,
+        string payload);
 }

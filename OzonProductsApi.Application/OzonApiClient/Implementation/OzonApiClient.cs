@@ -55,4 +55,37 @@ public class OzonApiClient : IOzonApiClient
 
             return JsonConvert.DeserializeObject<TResponse>(jsonResponse, Converter.Settings);
         }
+        
+        public async Task<TResponse> SendRequestAsync<TResponse>(
+            HttpMethod method,
+            string endpoint,
+            Dictionary<string, string>? headers,
+            string payload)
+        {
+            var client = _httpClientFactory.CreateClient("RetryClient");
+            
+            
+            var request = new HttpRequestMessage(method, endpoint);
+
+            if (headers != null)
+            {
+                foreach (var header in headers)
+                {
+                    request.Headers.Add(header.Key, header.Value);
+                }
+            }
+
+            if (payload != null)
+            {
+                request.Content = new StringContent(payload, Encoding.UTF8, "application/json");
+            }
+            
+            HttpResponseMessage response = await _retryPolicy.ExecuteAsync(() => client.SendAsync(request));
+            response.EnsureSuccessStatusCode();
+
+            string jsonResponse = await response.Content.ReadAsStringAsync();
+
+
+            return JsonConvert.DeserializeObject<TResponse>(jsonResponse, Converter.Settings);
+        }
     }

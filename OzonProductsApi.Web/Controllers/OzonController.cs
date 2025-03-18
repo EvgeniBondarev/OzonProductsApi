@@ -161,7 +161,7 @@ public class OzonController : ControllerBase
             var headers = new Dictionary<string, string>
             {
                 { "Client-Id", "482702" },
-                { "Api-Key", "26817ffe-ac88-430d-8b97-720704598fc6" },
+                { "Api-Key", "7ae789b7-93ff-4ca7-aae0-4f47f48ffdec" },
             };
 
             // Формирование тела запроса с вложенными моделями

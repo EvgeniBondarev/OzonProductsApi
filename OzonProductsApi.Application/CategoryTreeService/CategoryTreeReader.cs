@@ -5,11 +5,22 @@ namespace OzonProductsApi.Application.CategoryTreeService;
 
 public class CategoryTreeReader
 {
-    public static List<CategoryNode> ReadCategories()
+     private static readonly HttpClient httpClient = new HttpClient();
+
+    public static async Task<List<CategoryNode>> ReadCategoriesAsync()
     {
-        string rootPath = Directory.GetParent(AppContext.BaseDirectory)?.Parent?.Parent?.FullName ?? Directory.GetCurrentDirectory();
-        string json = File.ReadAllText(Path.Combine(rootPath, "Data", "ozonCategoryTree.json"));
-        var root = JsonConvert.DeserializeObject<Dictionary<string, List<CategoryNode>>>(json);
-        return root?["result"] ?? new List<CategoryNode>();
+        string url = "https://raw.githubusercontent.com/EvgeniBondarev/21Game/refs/heads/master/ozonCategoryTree.json";
+        
+        try
+        {
+            string json = await httpClient.GetStringAsync(url);
+            var root = JsonConvert.DeserializeObject<Dictionary<string, List<CategoryNode>>>(json);
+            return root?["result"] ?? new List<CategoryNode>();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка при чтении файла: {ex.Message}");
+            return new List<CategoryNode>();
+        }
     }
 }
