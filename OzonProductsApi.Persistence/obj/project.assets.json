@@ -3345,24 +3345,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\evgen\\.nuget\\packages\\": {}
+    "C:\\Users\\evgen\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\evgen\\RiderProjects\\OzonProductsApi\\OzonProductsApi.Persistence\\OzonProductsApi.Persistence.csproj",
+      "projectUniqueName": "D:\\.NETProject\\OzonProductsApi\\OzonProductsApi.Persistence\\OzonProductsApi.Persistence.csproj",
       "projectName": "OzonProductsApi.Persistence",
-      "projectPath": "C:\\Users\\evgen\\RiderProjects\\OzonProductsApi\\OzonProductsApi.Persistence\\OzonProductsApi.Persistence.csproj",
+      "projectPath": "D:\\.NETProject\\OzonProductsApi\\OzonProductsApi.Persistence\\OzonProductsApi.Persistence.csproj",
       "packagesPath": "C:\\Users\\evgen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\evgen\\RiderProjects\\OzonProductsApi\\OzonProductsApi.Persistence\\obj\\",
+      "outputPath": "D:\\.NETProject\\OzonProductsApi\\OzonProductsApi.Persistence\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\evgen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\evgen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3379,9 +3386,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -3432,7 +3439,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

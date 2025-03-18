@@ -9,7 +9,7 @@ public class CategoryTreeReader
 
     public static async Task<List<CategoryNode>> ReadCategoriesAsync()
     {
-        string url = "https://raw.githubusercontent.com/EvgeniBondarev/21Game/refs/heads/master/ozonCategoryTree.json";
+        string url = "https://s3.timeweb.cloud/25f554fc-6f66254e-9650-4d17-8e13-77b5b7d3242e/AppData/OzonProductsApi/JSON/ozonCategoryTree.json";
         
         try
         {

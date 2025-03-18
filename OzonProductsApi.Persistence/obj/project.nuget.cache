@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w8M9lb40sck=",
+  "dgSpecHash": "AFgSIIx9rXg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\evgen\\RiderProjects\\OzonProductsApi\\OzonProductsApi.Persistence\\OzonProductsApi.Persistence.csproj",
+  "projectFilePath": "D:\\.NETProject\\OzonProductsApi\\OzonProductsApi.Persistence\\OzonProductsApi.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\evgen\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
