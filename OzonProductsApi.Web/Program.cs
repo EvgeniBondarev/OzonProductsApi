@@ -2,7 +2,6 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using OzonProductsApi.Extensions;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ConfigureLogging(builder.Configuration);
@@ -27,7 +26,19 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
     });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()  
+                .AllowAnyMethod() 
+                .AllowAnyHeader();  
+        });
+});
+
 var app = builder.Build();
 
 app.ConfigureMiddleware();
+app.UseCors("AllowAll");
 app.Run();

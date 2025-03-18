@@ -2,7 +2,7 @@
 
 namespace OzonProductsApi.Application.OzonApiClient.Models.Request;
 
-public class DescriptionCategoryAttributePayload
+public class DescriptionCategoryAttributePayload 
 {
     [JsonProperty("description_category_id")]
     public long DescriptionCategoryId { get; set; }

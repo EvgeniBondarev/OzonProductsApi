@@ -1,0 +1,15 @@
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\bin\Debug\net9.0\OzonProductsApi.Persistence.deps.json
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\bin\Debug\net9.0\OzonProductsApi.Persistence.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\bin\Debug\net9.0\OzonProductsApi.Persistence.pdb
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.csproj.AssemblyReference.cache
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.AssemblyInfoInputs.cache
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.AssemblyInfo.cs
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.csproj.CoreCompileInputs.cache
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.sourcelink.json
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\refint\OzonProductsApi.Persistence.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.pdb
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\ref\OzonProductsApi.Persistence.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\bin\Debug\net9.0\OzonProductsApi.Persistence.runtimeconfig.json
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Persistence\obj\Debug\net9.0\OzonProductsApi.Persistence.genruntimeconfig.cache
