@@ -2,9 +2,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 USER $APP_UID
 WORKDIR /app
 # Указываем порт 80 в качестве URL для Kestrel
-ENV ASPNETCORE_URLS=http://+:80
+ENV ASPNETCORE_URLS=http://+:5002
 # Объявляем порт 80 для внешних подключений
-EXPOSE 80
+EXPOSE 5002
 
 # Этап сборки приложения
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build

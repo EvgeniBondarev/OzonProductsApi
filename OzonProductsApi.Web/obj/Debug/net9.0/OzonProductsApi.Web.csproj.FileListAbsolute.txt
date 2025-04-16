@@ -336,3 +336,4 @@ C:\Users\evgen\RiderProjects\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.
 C:\Users\evgen\RiderProjects\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\OzonProductsApi.Web.pdb
 C:\Users\evgen\RiderProjects\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\OzonProductsApi.Web.genruntimeconfig.cache
 C:\Users\evgen\RiderProjects\OzonProductsApi\OzonProductsApi.Web\obj\Debug\net9.0\ref\OzonProductsApi.Web.dll
+D:\.NETProject\OzonProductsApi\OzonProductsApi.Web\bin\Debug\net9.0\appsettings.Production.json
